@@ -1,10 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p3="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p3="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>860.8,3813.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>860.8,6441.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,6 +67,21 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>UiPath.IntelligentOCR.Activities.ValidationStation</x:String>
       <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Platform</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -148,19 +163,31 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
       <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="602.4,3748.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="602.4,5435.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="invoiceFileName" />
       <Variable x:TypeArguments="p4:ClassificationResult[]" Name="classificationResult" />
       <Variable x:TypeArguments="p2:Document" Name="docDom" />
       <Variable x:TypeArguments="x:String" Name="docText" />
       <Variable x:TypeArguments="p1:DocumentTaxonomy" Name="taxonomy" />
-      <Variable x:TypeArguments="x:String" Name="targetFolder" />
       <Variable x:TypeArguments="x:String" Name="filePath" />
       <Variable x:TypeArguments="x:String" Name="destinationFolder" />
+      <Variable x:TypeArguments="x:Int32" Name="currentDataTable" />
       <Variable x:TypeArguments="sd2:DataSet" Name="extractionResults" />
+      <Variable x:TypeArguments="x:String" Name="sendErrorMessage" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -175,20 +202,21 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <Sequence DisplayName="downloading invoices" sap:VirtualizedContainerService.HintSize="540,1053.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="downloading invoices" sap:VirtualizedContainerService.HintSize="540,1168.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="queueInvoiceLink" />
         <Variable x:TypeArguments="x:String" Name="sourceFolder" />
         <Variable x:TypeArguments="x:String" Name="currentPath" />
         <Variable x:TypeArguments="x:String" Name="targetPath" />
         <Variable x:TypeArguments="x:String" Name="fileUrl" />
+        <Variable x:TypeArguments="x:String" Name="queueInvoiceID" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">queueInvoiceLink</CSharpReference>
@@ -200,7 +228,19 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">queueInvoiceID</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_186">in_TransactionItem.SpecificContent["invoiceID"].ToString()</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">destinationFolder</CSharpReference>
@@ -227,12 +267,12 @@
       <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_11">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
-            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">filePath</CSharpReference>
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">GlobalVariablesNamespace.GlobalVariables.pp</CSharpReference>
           </OutArgument>
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">Path.Combine(destinationFolder, invoiceFileName)</CSharpValue>
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_187">Path.Combine(destinationFolder, invoiceFileName)</CSharpValue>
           </InArgument>
         </Assign.Value>
       </Assign>
@@ -253,7 +293,7 @@
       <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True">
         <ui:MoveFile.Destination>
           <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">filePath</CSharpValue>
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_188">GlobalVariablesNamespace.GlobalVariables.pp</CSharpValue>
           </InArgument>
         </ui:MoveFile.Destination>
         <ui:MoveFile.Path>
@@ -263,12 +303,11 @@
         </ui:MoveFile.Path>
       </ui:MoveFile>
     </Sequence>
-    <Sequence sap:VirtualizedContainerService.HintSize="540,2276.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Document understanding" sap:VirtualizedContainerService.HintSize="540,2467.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="learnFilePath" />
         <Variable x:TypeArguments="p4:ExtractionResult" Name="extractionResult" />
-        <Variable x:TypeArguments="scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Name="result" />
         <Variable x:TypeArguments="p4:ExtractionResult" Name="validatedExtrcationResults" />
+        <Variable x:TypeArguments="x:String" Name="exres" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -290,7 +329,7 @@
         </p:DigitizeDocument.DocumentObjectModel>
         <p:DigitizeDocument.DocumentPath>
           <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">filePath</CSharpValue>
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_189">GlobalVariablesNamespace.GlobalVariables.pp</CSharpValue>
           </InArgument>
         </p:DigitizeDocument.DocumentPath>
         <p:DigitizeDocument.DocumentText>
@@ -324,7 +363,7 @@
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="477.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_7">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
-            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">docText</CSharpValue>
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_160">"Digitized document " + invoiceFileName+ ": " + docText</CSharpValue>
           </InArgument>
         </ui:LogMessage.Message>
       </ui:LogMessage>
@@ -387,7 +426,7 @@
         </p3:ClassifyDocumentScope.DocumentObjectModel>
         <p3:ClassifyDocumentScope.DocumentPath>
           <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">filePath</CSharpValue>
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_190">GlobalVariablesNamespace.GlobalVariables.pp</CSharpValue>
           </InArgument>
         </p3:ClassifyDocumentScope.DocumentPath>
         <p3:ClassifyDocumentScope.DocumentText>
@@ -401,7 +440,7 @@
           </InArgument>
         </p3:ClassifyDocumentScope.Taxonomy>
       </p3:ClassifyDocumentScope>
-      <p6:DataExtractionScope ClassificationResult="{x:Null}" ApplyGenerativeValidation="False" DisplayName="Data Extraction Scope" DocumentTypeId="Semi-StructuredDocuments.Financial.Invoice" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="477.6,434.4" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI1458fe60c4174b2bb47c448de4a3c6b8&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Semi-StructuredDocuments.Financial.Receipt&quot;:{&quot;FieldMappings&quot;:{&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.VendorAddress&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.VendorAddress&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.PhoneNr&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.PhoneNr&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.ExpenseType&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ExpenseType&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.TaxAmount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.TaxAmount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.TotalValue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.TotalValue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Currency&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Currency&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Description&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Description&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Qty&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Qty&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.UnitPrice&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.UnitPrice&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Amount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Amount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Semi-StructuredDocuments.Financial.Invoice&quot;:{&quot;FieldMappings&quot;:{&quot;Semi-StructuredDocuments.Financial.Invoice.BillingName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.BillingName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.DueDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.DueDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.InvoiceNo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.InvoiceNo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Total&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Total&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items.LineNo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items.LineNo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items.Description&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items.Description&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items.ItemPONo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items.ItemPONo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items.Qty&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items.Qty&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items.UnitPrice&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items.UnitPrice&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items.Amount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items.Amount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Items.PartNo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Items.PartNo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;StructuredDocuments.LendingForms.W-9&quot;:{&quot;FieldMappings&quot;:{&quot;StructuredDocuments.LendingForms.W-9.1_Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.1_Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.2_BusinessName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.2_BusinessName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3a_Individual&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3a_Individual&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3b_CCorp&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3b_CCorp&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3c_SCorp&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3c_SCorp&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3d_Partnership&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3d_Partnership&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3e_Trust-estate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3e_Trust-estate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3f_LLC&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3f_LLC&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3f_LLCTaxClassification&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3f_LLCTaxClassification&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3g_Other&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3g_Other&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3g_OtherDetail&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3g_OtherDetail&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.5_Address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.5_Address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.6_CityStateZIP&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.6_CityStateZIP&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.7_AcctNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.7_AcctNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.TIN_SSN&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.TIN_SSN&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.TIN_EIN&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.TIN_EIN&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.Certification_Signature&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.Certification_Signature&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.Certification_SignatureDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.Certification_SignatureDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Documents.Other.Certificate-of-filing&quot;:{&quot;FieldMappings&quot;:{&quot;Documents.Other.Certificate-of-filing.FileNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.FileNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Documents.Other.Certificate-of-filing.Dated&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.Dated&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Documents.Other.Certificate-of-filing.Effective&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.Effective&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Documents.Other.Certificate-of-filing.State&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.State&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;InvoicesChecking.NoCategory.invoiceType&quot;:{&quot;FieldMappings&quot;:{&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;InvoicesChecking.NoCategory.invoiceType.CompanyName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.CompanyName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;InvoicesChecking.NoCategory.invoiceType.TotalDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.TotalDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI1458fe60c4174b2bb47c448de4a3c6b8&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI1458fe60c4174b2bb47c448de4a3c6b8&quot;:[]}}">
+      <p6:DataExtractionScope ClassificationResult="{x:Null}" ApplyGenerativeValidation="False" DisplayName="Data Extraction Scope" DocumentTypeId="Semi-StructuredDocuments.Financial.Invoice" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="477.6,434.4" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI1458fe60c4174b2bb47c448de4a3c6b8&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Semi-StructuredDocuments.Financial.Receipt&quot;:{&quot;FieldMappings&quot;:{&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.VendorAddress&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.VendorAddress&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.PhoneNr&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.PhoneNr&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ReceiptNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.ExpenseType&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.ExpenseType&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.TaxAmount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.TaxAmount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.TotalValue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.TotalValue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Currency&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Currency&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Description&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Description&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Qty&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Qty&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.UnitPrice&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.UnitPrice&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Amount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Receipt.Items.Amount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Semi-StructuredDocuments.Financial.Invoice&quot;:{&quot;FieldMappings&quot;:{&quot;Semi-StructuredDocuments.Financial.Invoice.BillingName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.BillingName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.DueDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.DueDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.InvoiceNo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.InvoiceNo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Semi-StructuredDocuments.Financial.Invoice.Total&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Semi-StructuredDocuments.Financial.Invoice.Total&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;StructuredDocuments.LendingForms.W-9&quot;:{&quot;FieldMappings&quot;:{&quot;StructuredDocuments.LendingForms.W-9.1_Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.1_Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.2_BusinessName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.2_BusinessName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3a_Individual&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3a_Individual&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3b_CCorp&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3b_CCorp&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3c_SCorp&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3c_SCorp&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3d_Partnership&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3d_Partnership&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3e_Trust-estate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3e_Trust-estate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3f_LLC&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3f_LLC&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3f_LLCTaxClassification&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3f_LLCTaxClassification&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3g_Other&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3g_Other&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.3g_OtherDetail&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.3g_OtherDetail&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.5_Address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.5_Address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.6_CityStateZIP&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.6_CityStateZIP&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.7_AcctNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.7_AcctNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.TIN_SSN&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.TIN_SSN&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.TIN_EIN&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.TIN_EIN&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.Certification_Signature&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.Certification_Signature&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;StructuredDocuments.LendingForms.W-9.Certification_SignatureDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;StructuredDocuments.LendingForms.W-9.Certification_SignatureDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Documents.Other.Certificate-of-filing&quot;:{&quot;FieldMappings&quot;:{&quot;Documents.Other.Certificate-of-filing.FileNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.FileNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Documents.Other.Certificate-of-filing.Dated&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.Dated&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Documents.Other.Certificate-of-filing.Effective&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.Effective&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Documents.Other.Certificate-of-filing.State&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Documents.Other.Certificate-of-filing.State&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;InvoicesChecking.NoCategory.invoiceType&quot;:{&quot;FieldMappings&quot;:{&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.InvoiceDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;InvoicesChecking.NoCategory.invoiceType.CompanyName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.CompanyName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;InvoicesChecking.NoCategory.invoiceType.TotalDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;InvoicesChecking.NoCategory.invoiceType.TotalDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI1458fe60c4174b2bb47c448de4a3c6b8&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI1458fe60c4174b2bb47c448de4a3c6b8&quot;:[]}}">
         <p6:DataExtractionScope.DocumentObjectModel>
           <InArgument x:TypeArguments="p2:Document">
             <CSharpValue x:TypeArguments="p2:Document" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">docDom</CSharpValue>
@@ -409,7 +448,7 @@
         </p6:DataExtractionScope.DocumentObjectModel>
         <p6:DataExtractionScope.DocumentPath>
           <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">filePath</CSharpValue>
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_191">GlobalVariablesNamespace.GlobalVariables.pp</CSharpValue>
           </InArgument>
         </p6:DataExtractionScope.DocumentPath>
         <p6:DataExtractionScope.DocumentText>
@@ -426,7 +465,7 @@
           <p6:RegexBasedExtractor DisplayName="Regex Based Extractor" sap:VirtualizedContainerService.HintSize="223.2,76" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_3" PersistenceId="UI1458fe60c4174b2bb47c448de4a3c6b8" Timeout="2000" UseVisualAlignment="False">
             <p6:RegexBasedExtractor.Configuration>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_159">"[{\"DocumentTypeId\":\"Semi-StructuredDocuments.Financial.Invoice\",\"FieldConfiguration\":[{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.BillingName\",\"Expression\":\"^([^\\\\d\\\\n]+?)\\\\n\",\"Options\":1,\"Model\":null},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.DueDate\",\"Expression\":\"\\\\b(\\\\d{4}-)(\\\\d{2})(-\\\\d{2})\\\\b|\\\\b(\\\\w{3}[.,]\\\\s)(\\\\d{1,2}[.,])(\\\\s\\\\d{4})\\\\b|\\\\b(\\\\w{3}['])(\\\\w{1,2}[.,])(\\\\s\\\\d{4})\\\\b\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"\\\\\\\\b(\\\\\\\\d{4}-)(\\\\\\\\d{2})(-\\\\\\\\d{2})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}[.,]\\\\\\\\s)(\\\\\\\\d{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}['])(\\\\\\\\w{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.InvoiceNo\",\"Expression\":\"\\\\s#(\\\\d+)\",\"Options\":1,\"Model\":null},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.Total\",\"Expression\":\"\\\\d+\\\\.\\\\d+(?!.*\\\\d+\\\\.\\\\d+)\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"\\\\\\\\d+\\\\\\\\.\\\\\\\\d+(?!.*\\\\\\\\d+\\\\\\\\.\\\\\\\\d+)\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"}]}]"</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_173">"[{\"DocumentTypeId\":\"Semi-StructuredDocuments.Financial.Invoice\",\"FieldConfiguration\":[{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.BillingName\",\"Expression\":\"([A-Za-z\\\\s]+?(?:LLC|Corp\\\\.?))(?=\\\\s|$)\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"([A-Za-z\\\\\\\\s]+?(?:LLC|Corp\\\\\\\\.?))(?=\\\\\\\\s|$)\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.DueDate\",\"Expression\":\"\\\\b(\\\\d{4}-)(\\\\d{2})(-\\\\d{2})\\\\b|\\\\b(\\\\w{3}[.,]\\\\s)(\\\\d{1,2}[.,])(\\\\s\\\\d{4})\\\\b|\\\\b(\\\\w{3}['])(\\\\w{1,2}[.,])(\\\\s\\\\d{4})\\\\b|\\\\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\\\\d{1,2}), (\\\\d{4})\\\\b\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"\\\\\\\\b(\\\\\\\\d{4}-)(\\\\\\\\d{2})(-\\\\\\\\d{2})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}[.,]\\\\\\\\s)(\\\\\\\\d{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}['])(\\\\\\\\w{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b|\\\\\\\\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\\\\\\\\d{1,2}), (\\\\\\\\d{4})\\\\\\\\b\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.InvoiceNo\",\"Expression\":\"\\\\s#(\\\\d+)\",\"Options\":1,\"Model\":null},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.Total\",\"Expression\":\"Balance \\\\w{3}:\\\\s*\\\\$?(\\\\d{1,3}(?:,\\\\d{3})*(?:\\\\.\\\\d{2})?)(?![\\\\d,])\",\"Options\":512,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"Balance \\\\\\\\w{3}:\\\\\\\\s*\\\\\\\\$?(\\\\\\\\d{1,3}(?:,\\\\\\\\d{3})*(?:\\\\\\\\.\\\\\\\\d{2})?)(?![\\\\\\\\d,])\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"}]}]"</CSharpValue>
               </InArgument>
             </p6:RegexBasedExtractor.Configuration>
             <p6:RegexBasedExtractor.DocumentBounds>
@@ -486,42 +525,53 @@
           </InArgument>
         </p6:DataExtractionScope.Taxonomy>
       </p6:DataExtractionScope>
-      <p:PresentValidationStation FieldsValidationConfidence="{x:Null}" DisplayName="Present Validation Station" sap:VirtualizedContainerService.HintSize="477.6,404" sap2010:WorkflowViewState.IdRef="PresentValidationStation_7" ShowOnlyRelevantPageRange="False">
-        <p:PresentValidationStation.AutomaticExtractionResults>
-          <InArgument x:TypeArguments="p4:ExtractionResult">
-            <CSharpValue x:TypeArguments="p4:ExtractionResult" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">extractionResult</CSharpValue>
-          </InArgument>
-        </p:PresentValidationStation.AutomaticExtractionResults>
-        <p:PresentValidationStation.DocumentObjectModel>
-          <InArgument x:TypeArguments="p2:Document">
-            <CSharpValue x:TypeArguments="p2:Document" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">docDom</CSharpValue>
-          </InArgument>
-        </p:PresentValidationStation.DocumentObjectModel>
-        <p:PresentValidationStation.DocumentPath>
-          <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">filePath</CSharpValue>
-          </InArgument>
-        </p:PresentValidationStation.DocumentPath>
-        <p:PresentValidationStation.DocumentText>
-          <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">docText</CSharpValue>
-          </InArgument>
-        </p:PresentValidationStation.DocumentText>
-        <p:PresentValidationStation.Taxonomy>
-          <InArgument x:TypeArguments="p1:DocumentTaxonomy">
-            <CSharpValue x:TypeArguments="p1:DocumentTaxonomy" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">taxonomy</CSharpValue>
-          </InArgument>
-        </p:PresentValidationStation.Taxonomy>
-        <p:PresentValidationStation.ValidatedExtractionResults>
-          <OutArgument x:TypeArguments="p4:ExtractionResult">
-            <CSharpReference x:TypeArguments="p4:ExtractionResult" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">validatedExtrcationResults</CSharpReference>
-          </OutArgument>
-        </p:PresentValidationStation.ValidatedExtractionResults>
-      </p:PresentValidationStation>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="477.6,594.4" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,484" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:PresentValidationStation FieldsValidationConfidence="{x:Null}" DisplayName="Present Validation Station" sap:VirtualizedContainerService.HintSize="353.6,395.2" sap2010:WorkflowViewState.IdRef="PresentValidationStation_8" ShowOnlyRelevantPageRange="False">
+              <p:PresentValidationStation.AutomaticExtractionResults>
+                <InArgument x:TypeArguments="p4:ExtractionResult">
+                  <CSharpValue x:TypeArguments="p4:ExtractionResult" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">extractionResult</CSharpValue>
+                </InArgument>
+              </p:PresentValidationStation.AutomaticExtractionResults>
+              <p:PresentValidationStation.DocumentObjectModel>
+                <InArgument x:TypeArguments="p2:Document">
+                  <CSharpValue x:TypeArguments="p2:Document" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">docDom</CSharpValue>
+                </InArgument>
+              </p:PresentValidationStation.DocumentObjectModel>
+              <p:PresentValidationStation.DocumentPath>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">filePath</CSharpValue>
+                </InArgument>
+              </p:PresentValidationStation.DocumentPath>
+              <p:PresentValidationStation.DocumentText>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">docText</CSharpValue>
+                </InArgument>
+              </p:PresentValidationStation.DocumentText>
+              <p:PresentValidationStation.Taxonomy>
+                <InArgument x:TypeArguments="p1:DocumentTaxonomy">
+                  <CSharpValue x:TypeArguments="p1:DocumentTaxonomy" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">taxonomy</CSharpValue>
+                </InArgument>
+              </p:PresentValidationStation.Taxonomy>
+              <p:PresentValidationStation.ValidatedExtractionResults>
+                <OutArgument x:TypeArguments="p4:ExtractionResult">
+                  <CSharpReference x:TypeArguments="p4:ExtractionResult" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">validatedExtrcationResults</CSharpReference>
+                </OutArgument>
+              </p:PresentValidationStation.ValidatedExtractionResults>
+            </p:PresentValidationStation>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
       <p6:ExportExtractionResults DisplayName="Export Extraction Results" sap:VirtualizedContainerService.HintSize="477.6,200" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_1" IncludeConfidence="False" IncludeOCRConfidence="False">
         <p6:ExportExtractionResults.DataSet>
           <OutArgument x:TypeArguments="sd2:DataSet">
-            <CSharpReference x:TypeArguments="sd2:DataSet" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">extractionResults</CSharpReference>
+            <CSharpReference x:TypeArguments="sd2:DataSet" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">extractionResults</CSharpReference>
           </OutArgument>
         </p6:ExportExtractionResults.DataSet>
         <p6:ExportExtractionResults.ExtractionResult>
@@ -530,6 +580,113 @@
           </InArgument>
         </p6:ExportExtractionResults.ExtractionResult>
       </p6:ExportExtractionResults>
+    </Sequence>
+    <ui:ForEach x:TypeArguments="sd2:DataTable" DisplayName="For Each currentDataTable" sap:VirtualizedContainerService.HintSize="540,548.8" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="sd2:DataTable">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd2:DataTable" Name="currentDataTable" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,402.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:Workbook" Name="result" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_11">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_221">currentDataTable.TableName</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <ui:WriteRange AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_3" StartingCell="A1" WorkbookPath="ExtractionResult.xlsx">
+              <ui:WriteRange.DataTable>
+                <InArgument x:TypeArguments="sd2:DataTable">
+                  <CSharpValue x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_217">currentDataTable</CSharpValue>
+                </InArgument>
+              </ui:WriteRange.DataTable>
+              <ui:WriteRange.SheetName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_182">currentDataTable.TableName</CSharpValue>
+                </InArgument>
+              </ui:WriteRange.SheetName>
+            </ui:WriteRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <ui:ForEach.CurrentIndex>
+        <OutArgument x:TypeArguments="x:Int32">
+          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">currentDataTable</CSharpReference>
+        </OutArgument>
+      </ui:ForEach.CurrentIndex>
+      <ui:ForEach.Values>
+        <InArgument x:TypeArguments="sc:IEnumerable">
+          <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_184">extractionResults.Tables</CSharpValue>
+        </InArgument>
+      </ui:ForEach.Values>
+    </ui:ForEach>
+    <Sequence DisplayName="email" sap:VirtualizedContainerService.HintSize="540,832" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="excelFile">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">ExtractionResult.xlsx</Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="emailBody" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="sendErrorMessageEmail" CacheStrategy="None" DisplayName="Get Asset" FolderPath="OrchestratorOverview" sap:VirtualizedContainerService.HintSize="387.2,175.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">sendErrorMessage</CSharpReference>
+          </OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" ConnectionId="0cac9c44-d169-4e38-8016-e654c3458bd4" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="387.2,536" sap2010:WorkflowViewState.IdRef="SendEmailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="Results of the processed invoices" UseConnectionService="True">
+        <uga:SendEmailConnections.ArgumentAttachments>
+          <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+            <InArgument x:TypeArguments="upr:IResource">
+              <CSharpValue x:TypeArguments="upr:IResource" sap2010:WorkflowViewState.IdRef="CSharpValue`1_214">LocalResource.FromPath("ExtractionResult.xlsx")</CSharpValue>
+            </InArgument>
+          </scg:List>
+        </uga:SendEmailConnections.ArgumentAttachments>
+        <uga:SendEmailConnections.AttachmentsBackup>
+          <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="Builder">
+            <usau:BackupSlot.BackupValues>
+              <scg:List x:TypeArguments="x:Object" x:Key="UseExisting" Capacity="1">
+                <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)">
+                  <CSharpValue x:TypeArguments="scg:IEnumerable(upr:IResource)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">excelFile</CSharpValue>
+                </InArgument>
+              </scg:List>
+            </usau:BackupSlot.BackupValues>
+          </usau:BackupSlot>
+        </uga:SendEmailConnections.AttachmentsBackup>
+        <uga:SendEmailConnections.Body>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_218">string.Format("&lt;P&gt;&lt;SPAN&gt;Results of the processed invoices are &lt;/SPAN&gt;&lt;SPAN&gt;P&lt;/SPAN&gt;&lt;SPAN&gt;r&lt;/SPAN&gt;&lt;SPAN&gt;esented in this Excel &lt;/SPAN&gt;&lt;SPAN&gt;spreadsheet.&lt;/SPAN&gt;&lt;/P&gt;")</CSharpValue>
+          </InArgument>
+        </uga:SendEmailConnections.Body>
+        <uga:SendEmailConnections.InputTypeBackup>
+          <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+            <usau:BackupSlot.BackupValues>
+              <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+            </usau:BackupSlot.BackupValues>
+          </usau:BackupSlot>
+        </uga:SendEmailConnections.InputTypeBackup>
+        <uga:SendEmailConnections.To>
+          <InArgument x:TypeArguments="scg:IEnumerable(x:String)">
+            <CSharpValue x:TypeArguments="scg:IEnumerable(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_200">new List&lt;string&gt; { sendErrorMessage }</CSharpValue>
+          </InArgument>
+        </uga:SendEmailConnections.To>
+      </uga:SendEmailConnections>
     </Sequence>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="540,79.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
   </Sequence>
