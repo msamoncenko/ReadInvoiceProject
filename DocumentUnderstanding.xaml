@@ -10,7 +10,7 @@
     <x:Property Name="filePath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>860.8,3802.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>860.8,3238.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -159,13 +159,13 @@
       <AssemblyReference>mscorlib</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="602.4,3737.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap:VirtualizedContainerService.HintSize="602.4,3173.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Document understanding" sap:VirtualizedContainerService.HintSize="540,3118.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Document understanding" sap:VirtualizedContainerService.HintSize="540,3084.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="p2:ExtractionResult" Name="extractionResult" />
         <Variable x:TypeArguments="p2:ExtractionResult" Name="validatedExtrcationResults" />
@@ -356,7 +356,7 @@
           <p6:RegexBasedExtractor DisplayName="Regex Based Extractor" sap:VirtualizedContainerService.HintSize="223.2,76" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_3" PersistenceId="UI1458fe60c4174b2bb47c448de4a3c6b8" Timeout="2000" UseVisualAlignment="False">
             <p6:RegexBasedExtractor.Configuration>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_173">"[{\"DocumentTypeId\":\"Semi-StructuredDocuments.Financial.Invoice\",\"FieldConfiguration\":[{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.BillingName\",\"Expression\":\"([A-Za-z\\\\s]+?(?:LLC|Corp\\\\.?))(?=\\\\s|$)\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"([A-Za-z\\\\\\\\s]+?(?:LLC|Corp\\\\\\\\.?))(?=\\\\\\\\s|$)\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.DueDate\",\"Expression\":\"\\\\b(\\\\d{4}-)(\\\\d{2})(-\\\\d{2})\\\\b|\\\\b(\\\\w{3}[.,]\\\\s)(\\\\d{1,2}[.,])(\\\\s\\\\d{4})\\\\b|\\\\b(\\\\w{3}['])(\\\\w{1,2}[.,])(\\\\s\\\\d{4})\\\\b|\\\\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\\\\d{1,2}), (\\\\d{4})\\\\b\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"\\\\\\\\b(\\\\\\\\d{4}-)(\\\\\\\\d{2})(-\\\\\\\\d{2})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}[.,]\\\\\\\\s)(\\\\\\\\d{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}['])(\\\\\\\\w{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b|\\\\\\\\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\\\\\\\\d{1,2}), (\\\\\\\\d{4})\\\\\\\\b\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.InvoiceNo\",\"Expression\":\"\\\\s#(\\\\d+)\",\"Options\":1,\"Model\":null},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.Total\",\"Expression\":\"Balance \\\\w{3}:\\\\s*\\\\$?(\\\\d{1,3}(?:,\\\\d{3})*(?:\\\\.\\\\d{2})?)(?![\\\\d,])\",\"Options\":512,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"Balance \\\\\\\\w{3}:\\\\\\\\s*\\\\\\\\$?(\\\\\\\\d{1,3}(?:,\\\\\\\\d{3})*(?:\\\\\\\\.\\\\\\\\d{2})?)(?![\\\\\\\\d,])\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"}]}]"</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_203">"[{\"DocumentTypeId\":\"Semi-StructuredDocuments.Financial.Invoice\",\"FieldConfiguration\":[{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.BillingName\",\"Expression\":\"([A-Za-z\\\\s]+?(?:LLC|Corp\\\\.?))(?=\\\\s|$)\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"([A-Za-z\\\\\\\\s]+?(?:LLC|Corp\\\\\\\\.?))(?=\\\\\\\\s|$)\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.DueDate\",\"Expression\":\"\\\\b(\\\\d{4}-)(\\\\d{2})(-\\\\d{2})\\\\b|\\\\b(\\\\w{3}[.,]\\\\s)(\\\\d{1,2}[.,])(\\\\s\\\\d{4})\\\\b|\\\\b(\\\\w{3}['])(\\\\w{1,2}[.,])(\\\\s\\\\d{4})\\\\b|\\\\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\\\\d{1,2}), (\\\\d{4})\\\\b|([A-Za-z]{3})\\\\s(\\\\d{1,2}),\\\\s(\\\\d{4})\",\"Options\":1,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"\\\\\\\\b(\\\\\\\\d{4}-)(\\\\\\\\d{2})(-\\\\\\\\d{2})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}[.,]\\\\\\\\s)(\\\\\\\\d{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b|\\\\\\\\b(\\\\\\\\w{3}['])(\\\\\\\\w{1,2}[.,])(\\\\\\\\s\\\\\\\\d{4})\\\\\\\\b|\\\\\\\\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\\\\\\\\d{1,2}), (\\\\\\\\d{4})\\\\\\\\b|([A-Za-z]{3})\\\\\\\\s(\\\\\\\\d{1,2}),\\\\\\\\s(\\\\\\\\d{4})\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.InvoiceNo\",\"Expression\":\"\\\\s#(\\\\d+)\",\"Options\":1,\"Model\":null},{\"FieldId\":\"Semi-StructuredDocuments.Financial.Invoice.Total\",\"Expression\":\"Balance \\\\w{3}:\\\\s*\\\\$?(\\\\d{1,3}(?:,\\\\d{3})*(?:\\\\.\\\\d{2})?)(?![\\\\d,])|(\\\\d{1,3}(?:,\\\\d{3})*|(\\\\d+))(\\\\.\\\\d{2})(?=\\\\s+Many)\",\"Options\":512,\"Model\":\"{\\\"Parts\\\":[{\\\"Capture\\\":false,\\\"Index\\\":0,\\\"OperationID\\\":\\\"ADV\\\",\\\"OperationName\\\":\\\"Advanced\\\",\\\"OperationValue\\\":\\\"Balance \\\\\\\\w{3}:\\\\\\\\s*\\\\\\\\$?(\\\\\\\\d{1,3}(?:,\\\\\\\\d{3})*(?:\\\\\\\\.\\\\\\\\d{2})?)(?![\\\\\\\\d,])|(\\\\\\\\d{1,3}(?:,\\\\\\\\d{3})*|(\\\\\\\\d+))(\\\\\\\\.\\\\\\\\d{2})(?=\\\\\\\\s+Many)\\\",\\\"QuantifierFirstValue\\\":\\\"1\\\",\\\"QuantifierID\\\":\\\"EXT\\\",\\\"QuantifierName\\\":\\\"Exactly\\\",\\\"QuantifierSecondValue\\\":null}],\\\"Version\\\":2}\"}]}]"</CSharpValue>
               </InArgument>
             </p6:RegexBasedExtractor.Configuration>
             <p6:RegexBasedExtractor.DocumentBounds>
@@ -423,55 +423,6 @@
           </InArgument>
         </ui:LogMessage.Message>
       </ui:LogMessage>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="477.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,484" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <p3:PresentValidationStation FieldsValidationConfidence="{x:Null}" DisplayName="Present Validation Station" sap:VirtualizedContainerService.HintSize="353.6,395.2" sap2010:WorkflowViewState.IdRef="PresentValidationStation_8" ShowOnlyRelevantPageRange="False">
-              <p3:PresentValidationStation.AutomaticExtractionResults>
-                <InArgument x:TypeArguments="p2:ExtractionResult">
-                  <CSharpValue x:TypeArguments="p2:ExtractionResult" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">extractionResult</CSharpValue>
-                </InArgument>
-              </p3:PresentValidationStation.AutomaticExtractionResults>
-              <p3:PresentValidationStation.DocumentObjectModel>
-                <InArgument x:TypeArguments="p:Document">
-                  <CSharpValue x:TypeArguments="p:Document" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">docDom</CSharpValue>
-                </InArgument>
-              </p3:PresentValidationStation.DocumentObjectModel>
-              <p3:PresentValidationStation.DocumentPath>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">filePath</CSharpValue>
-                </InArgument>
-              </p3:PresentValidationStation.DocumentPath>
-              <p3:PresentValidationStation.DocumentText>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">docText</CSharpValue>
-                </InArgument>
-              </p3:PresentValidationStation.DocumentText>
-              <p3:PresentValidationStation.Taxonomy>
-                <InArgument x:TypeArguments="p1:DocumentTaxonomy">
-                  <CSharpValue x:TypeArguments="p1:DocumentTaxonomy" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">taxonomy</CSharpValue>
-                </InArgument>
-              </p3:PresentValidationStation.Taxonomy>
-              <p3:PresentValidationStation.ValidatedExtractionResults>
-                <OutArgument x:TypeArguments="p2:ExtractionResult">
-                  <CSharpReference x:TypeArguments="p2:ExtractionResult" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">validatedExtrcationResults</CSharpReference>
-                </OutArgument>
-              </p3:PresentValidationStation.ValidatedExtractionResults>
-            </p3:PresentValidationStation>
-          </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="477.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">

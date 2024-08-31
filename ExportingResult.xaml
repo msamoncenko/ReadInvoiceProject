@@ -7,7 +7,7 @@
     <x:Property Name="currentDataTable" Type="InOutArgument(x:Int32)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>860.8,1042.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>860.8,1190.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -142,7 +142,7 @@
       <AssemblyReference>mscorlib</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="512,977.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence sap:VirtualizedContainerService.HintSize="512,1125.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,13 +155,13 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:ForEach x:TypeArguments="sd:DataTable" DisplayName="For Each currentDataTable" sap:VirtualizedContainerService.HintSize="449.6,714.4" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+    <ui:ForEach x:TypeArguments="sd:DataTable" DisplayName="For Each currentDataTable" sap:VirtualizedContainerService.HintSize="449.6,862.4" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sd:DataTable">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataTable" Name="currentDataTable" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,576.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,724.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:Workbook" Name="result" />
             </Sequence.Variables>
@@ -177,18 +177,30 @@
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <ui:WriteRange AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,148" sap2010:WorkflowViewState.IdRef="WriteRange_3" StartingCell="A1" WorkbookPath="ExtractionResult.xlsx">
+            <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,148" sap2010:WorkflowViewState.IdRef="WriteRange_4" WorkbookPath="ExtractionResult.xlsx">
               <ui:WriteRange.DataTable>
                 <InArgument x:TypeArguments="sd:DataTable">
-                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_217">currentDataTable</CSharpValue>
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_226">currentDataTable</CSharpValue>
                 </InArgument>
               </ui:WriteRange.DataTable>
               <ui:WriteRange.SheetName>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_182">currentDataTable.TableName</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_227">currentDataTable.TableName</CSharpValue>
                 </InArgument>
               </ui:WriteRange.SheetName>
             </ui:WriteRange>
+            <ui:AppendRange DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,148" sap2010:WorkflowViewState.IdRef="AppendRange_1" WorkbookPath="ExtractionResult.xlsx">
+              <ui:AppendRange.DataTable>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_224">currentDataTable</CSharpValue>
+                </InArgument>
+              </ui:AppendRange.DataTable>
+              <ui:AppendRange.SheetName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_225">currentDataTable.TableName</CSharpValue>
+                </InArgument>
+              </ui:AppendRange.SheetName>
+            </ui:AppendRange>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
